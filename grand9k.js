@@ -528,7 +528,12 @@ const get = (text) => {
   return buffer;
 }
 
+const map = () => {
+  return Object.keys(glyphs);
+}
+
 exports.get = get;
+exports.map = map;
 
 exports.NAME = NAME;
 exports.HEIGHT = HEIGHT;
