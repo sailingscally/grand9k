@@ -1,0 +1,11 @@
+{
+  "name": "grand9k",
+  "version": "1.0.0",
+  "description": "Grand9K Pixel font compatible with OLED displays in a Node.JS friendly format.",
+  "main": "grand9k.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Luis Martins",
+  "license": "Apache-2.0"
+}
