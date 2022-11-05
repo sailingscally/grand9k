@@ -2,6 +2,17 @@
 
 This Node.JS module provides a tiny font to be used on small OLED displays.
 
+## Methods
+
+- `get(text)` - returns the buffer to be written to the display to print the given text
+- `map()` - returns a list of all characters in this font
+
+## Constants
+
+- `NAME` - the name of the font
+- `HEIGHT` - the height of the font in pixels (**8**), the width of each character is variable
+- `SPACE_WIDTH` - the number of pixels between each character
+
 ## Character Map
 
 Only the following characters have been implemented:
