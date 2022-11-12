@@ -1,6 +1,6 @@
 /*
  * Copyright 2022 Luis Martins <luis.martins@gmail.com>
- * 
+ *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
  *
@@ -31,7 +31,7 @@ glyphs['A'] = [
   0b00010001,
   0b00010001,
   0b00010001,
-  0b01111110  
+  0b01111110
 ];
 glyphs['B'] = [
   0b01111111,
@@ -122,7 +122,7 @@ glyphs['O'] = [
   0b01000001,
   0b01000001,
   0b01000001,
-  0b00111110,
+  0b00111110
 ];
 glyphs['P'] = [
   0b01111111,
@@ -172,7 +172,7 @@ glyphs['V'] = [
   0b00100000,
   0b01000000,
   0b00100000,
-  0b00011111,
+  0b00011111
 ];
 glyphs['W'] = [
   0b01111111,
@@ -186,7 +186,7 @@ glyphs['X'] = [
   0b00010100,
   0b00001000,
   0b00010100,
-  0b01100011,
+  0b01100011
 ];
 glyphs['Y'] = [
   0b00000111,
@@ -533,28 +533,28 @@ glyphs['\u00DA'] = [ // this is a small 2
 ];
 
 const get = (text) => {
-  const buffer = new Array();
-
   const space = new Array(SPACE_WIDTH);
   space.fill(0x00);
-  
+
+  const buffer = [];
+
   for(let i = 0; i < text.length; i ++) {
     if(i != 0) {
       buffer.push(...space);
     }
-    
+
     const char = text.charAt(i);
-    
+
     if(glyphs[char] == undefined) {
       // TODO: warn about missing characters but continue execution
       continue;
     }
-    
+
     buffer.push(...glyphs[char]);
   }
 
   return buffer;
-}
+};
 
 exports.get = get;
 
