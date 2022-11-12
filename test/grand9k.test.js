@@ -31,7 +31,7 @@ describe('Constants', () => {
   });
 
   test('Spacing', () => {
-    expect(font.SPACE_WIDTH).toEqual(2);
+    expect(font.__get__('SPACE_WIDTH')).toEqual(2);
   });
 });
 

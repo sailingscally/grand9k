@@ -560,4 +560,3 @@ exports.get = get;
 
 exports.NAME = NAME;
 exports.HEIGHT = HEIGHT;
-exports.SPACE_WIDTH = SPACE_WIDTH;

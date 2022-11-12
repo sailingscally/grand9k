@@ -5,13 +5,11 @@ This Node.JS module provides a tiny font to be used on small OLED displays.
 ## Methods
 
 - `get(text)` - returns the buffer to be written to the display to print the given text
-- `map()` - returns a list of all characters in this font
 
 ## Constants
 
 - `NAME` - the name of the font
 - `HEIGHT` - the height of the font in pixels (**8**), the width of each character is variable
-- `SPACE_WIDTH` - the number of pixels between each character
 
 ## Tests & Coverage
 
@@ -32,7 +30,10 @@ version 12, we need to use Jest version 28 for compatibility.*
 ## Code Linting
 
 [ESLint](https://eslint.org/) is used for code linting, mostly based on the
-[google](https://www.npmjs.com/package/eslint-config-google) config rules with some tweaks.
+[google](https://www.npmjs.com/package/eslint-config-google) config rules, with some tweaks to match my own
+coding style. Choosing ESlint was mostly due to the flexibility it offers (*StandardJS* is too opinionated
+with no config options) and the fact that it is
+[much more popular](https://npmtrends.com/eslint-vs-jscs-vs-jshint-vs-jslint).
 
 To get a report run:
 
