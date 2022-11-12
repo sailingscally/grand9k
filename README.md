@@ -29,6 +29,17 @@ test coverage reports on these. Using `rewire` would cause the test coverage to 
 *Note: Since the Raspberry Pi Zero uses an ARMv6 processor, for which the latest Node.JS available is
 version 12, we need to use Jest version 28 for compatibility.*
 
+## Code Linting
+
+[ESLint](https://eslint.org/) is used for code linting, mostly based on the
+[google](https://www.npmjs.com/package/eslint-config-google) config rules with some tweaks.
+
+To get a report run:
+
+```
+npm run lint
+```
+
 ## Character Map
 
 Only the following characters have been implemented:
