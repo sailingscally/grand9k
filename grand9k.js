@@ -543,18 +543,20 @@ const get = (text) => {
       buffer.push(...space);
     }
     
-    buffer.push(...glyphs[text.charAt(i)]);
+    const char = text.charAt(i);
+    
+    if(glyphs[char] == undefined) {
+      // TODO: warn about missing characters but continue execution
+      continue;
+    }
+    
+    buffer.push(...glyphs[char]);
   }
 
   return buffer;
 }
 
-const map = () => {
-  return Object.keys(glyphs);
-}
-
 exports.get = get;
-exports.map = map;
 
 exports.NAME = NAME;
 exports.HEIGHT = HEIGHT;

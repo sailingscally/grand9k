@@ -13,6 +13,22 @@ This Node.JS module provides a tiny font to be used on small OLED displays.
 - `HEIGHT` - the height of the font in pixels (**8**), the width of each character is variable
 - `SPACE_WIDTH` - the number of pixels between each character
 
+## Tests & Coverage
+
+[Jest](https://jestjs.io/) is used to implement unit tests and provide test coverage reports on this module.
+
+To run both unit tests and get a test coverage report, just run:
+
+```
+npm test
+```
+
+The module `babel-plugin-rewire` is necessary to run tests on non exported methods and still be able to get
+test coverage reports on these. Using `rewire` would cause the test coverage to fail.
+
+*Note: Since the Raspberry Pi Zero uses an ARMv6 processor, for which the latest Node.JS available is
+version 12, we need to use Jest version 28 for compatibility.*
+
 ## Character Map
 
 Only the following characters have been implemented:
