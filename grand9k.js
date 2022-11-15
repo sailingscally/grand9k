@@ -19,7 +19,9 @@
  *    specific prior written permission.
  */
 
-const NAME = 'Grand9K Pixel Font';
+const commons = require('r9t-commons');
+
+const NAME = 'Grand9K Pixel';
 
 const HEIGHT = 8; // in pixels
 const SPACE_WIDTH = 2; // two pixels
@@ -546,7 +548,7 @@ const get = (text) => {
     const char = text.charAt(i);
 
     if(glyphs[char] == undefined) {
-      // TODO: warn about missing characters but continue execution
+      commons.log.warn('Character "%s" is missing in "%s" font.', char, NAME);
       continue;
     }
 

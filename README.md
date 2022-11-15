@@ -24,9 +24,6 @@ npm test
 The module `babel-plugin-rewire` is necessary to run tests on non exported methods and still be able to get
 test coverage reports on these. Using `rewire` would cause the test coverage to fail.
 
-*Note: Since the Raspberry Pi Zero uses an ARMv6 processor, for which the latest Node.JS available is
-version 12, we need to use Jest version 28 for compatibility.*
-
 ## Code Linting
 
 [ESLint](https://eslint.org/) is used for code linting, mostly based on the

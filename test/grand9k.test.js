@@ -23,7 +23,7 @@ const font = require('../grand9k.js');
 
 describe('Constants', () => {
   test('Name', () => {
-    expect(font.NAME).toEqual('Grand9K Pixel Font');
+    expect(font.NAME).toEqual('Grand9K Pixel');
   });
 
   test('Height', () => {
@@ -38,8 +38,6 @@ describe('Constants', () => {
 describe('Glyphs', () => {
   test('Count', () => {
     const map = Object.keys(font.__get__('glyphs'));
-
-    console.log(map);
 
     expect(Array.isArray(map)).toBeTruthy();
     expect(map.length).toEqual(83);
@@ -91,6 +89,16 @@ describe('Glyphs', () => {
 });
 
 describe('Get Characters', () => {
+  const commons = font.__get__('commons');
+
+  beforeEach(() => {
+    commons.log.warn = jest.fn();
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   test('Character "!"', () => {
     const buffer = font.get('!');
 
@@ -102,10 +110,12 @@ describe('Get Characters', () => {
   test('Missing "^"', () => {
     const buffer = font.get('^');
 
-    // TODO: check that a warning was logged
-
     expect(Array.isArray(buffer)).toBeTruthy();
     expect(buffer.length).toEqual(0);
+
+    expect(commons.log.warn).toHaveBeenCalledTimes(1);
+    expect(commons.log.warn).toHaveBeenCalledWith(
+        'Character "%s" is missing in "%s" font.', '^', font.NAME);
   });
 
   test('Spacing', () => {
